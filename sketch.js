@@ -94,6 +94,10 @@ function draw() {
        touches = [];
     }
     
+    if (keyDown("o")){
+      trex.velocityY=-1.5
+    }
+    
     
   
     trex.velocityY = trex.velocityY + 1.5;
