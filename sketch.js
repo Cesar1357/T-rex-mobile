@@ -54,7 +54,7 @@ function setup() {
   ground = createSprite(width/2,height/2+10,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
-  //ground.velocityX = +(50);
+  
   
   gameOver = createSprite(width/2,height/2-100);
   gameOver.addImage(gameOverImg);
@@ -103,7 +103,7 @@ function draw() {
   
     trex.velocityY = trex.velocityY + 1.5;
   
-    if (ground.x < 0){
+    if (ground.x < 200){
       ground.x = ground.width/2;
     }
   
