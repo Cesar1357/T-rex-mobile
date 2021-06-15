@@ -44,9 +44,8 @@ function setup() {
   
   trex = createSprite(50,height/2,20,50);
   trex.debug=false;
-  trex.setCollider("circle",-5,-9,40);
+  trex.setCollider("circle",-20,-5,40);
 
-  
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   trex.scale = 0.5;
@@ -88,7 +87,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height/2-8) {
+   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height/2-10) {
      JumpSound.play();
       
       trex.velocityY = -10;
@@ -163,7 +162,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(width+20,height/2,10,40);
+    var obstacle = createSprite(width+20,height/2-5,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(6 + 3*score/100);
     
