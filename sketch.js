@@ -43,7 +43,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   trex = createSprite(50,height/2,20,50);
-  trex.debug=false;
+  trex.debug=true;
   trex.setCollider("circle",-10,-5,35);
 
   trex.addAnimation("running", trex_running);
@@ -67,7 +67,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height/2+15,width,10);
+  invisibleGround = createSprite(width/2,height/2+20,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -162,7 +162,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(width+20,height/2-5,10,40);
+    var obstacle = createSprite(width+20,height/2-2,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(10 + 3*score/100);
     
