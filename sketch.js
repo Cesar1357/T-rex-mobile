@@ -43,7 +43,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   trex = createSprite(50,height/2,20,50);
-  trex.debug=true;
+  trex.debug=false;
   trex.setCollider("circle",-10,-5,35);
 
   trex.addAnimation("running", trex_running);
