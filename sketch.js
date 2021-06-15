@@ -10,6 +10,7 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 var JumpSound, DieSound, sound100;
 
 var score=0;
+var hight=0;
 
 var gameOver, restart;
 
@@ -82,6 +83,7 @@ function draw() {
   textSize(20);
   fill("black")
   text("Puntuación: "+ score, width-200,50);
+  text("HI: "+ hight,width-350,50)
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
@@ -90,7 +92,6 @@ function draw() {
    if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height/2-10) {
      trex.velocityY = -15;
       JumpSound.play();
-      
        touches = [];
     }
     
@@ -118,6 +119,14 @@ function draw() {
   else if (gameState === END) {
     gameOver.visible = true;
     restart.visible = true;
+    
+    
+    
+    if (score>hight){
+      
+          hight=score;
+
+    }
     
     //establece velocidad a caba objeto del juego en 0
     ground.velocityX = 0;
@@ -166,7 +175,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(width+20,height/2-2,10,40);
+    var obstacle = createSprite(width+10,height/2-2,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(10 + 3*score/100);
     
