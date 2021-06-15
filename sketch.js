@@ -95,7 +95,7 @@ function draw() {
     }
     
     if (keyDown("o")){
-      trex.velocityY=-1.5
+      trex.velocityY=-1.5;
     }
     
     
