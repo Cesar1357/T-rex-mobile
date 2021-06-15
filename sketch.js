@@ -87,7 +87,7 @@ function draw() {
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
-    ground.velocityX = -(10 + 3*score/100);
+    ground.velocityX = -(9 + 3*score/100);
   
    if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height/2-10) {
      trex.velocityY = -15;
@@ -103,7 +103,7 @@ function draw() {
   
     trex.velocityY = trex.velocityY + 1.5;
   
-    if (ground.x < 300){
+    if (ground.x < 0){
       ground.x = ground.width/2;
     }
   
