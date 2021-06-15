@@ -42,7 +42,7 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-  trex = createSprite(50,height-200,20,50);
+  trex = createSprite(50,height/2,20,50);
   trex.debug=false;
   trex.setCollider("circle",-5,-9,40);
 
@@ -51,7 +51,7 @@ function setup() {
   trex.addAnimation("collided", trex_collided);
   trex.scale = 0.5;
   
-  ground = createSprite(width/2,height-180,width,20);
+  ground = createSprite(width/2,height/2+10,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
@@ -68,7 +68,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height-170,width,10);
+  invisibleGround = createSprite(width/2,height/2+15,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -80,13 +80,15 @@ function setup() {
 function draw() {
   //trex.debug = true;
   background(255);
-  text("Puntuación: "+ score, width-150,50);
+  textSize(20);
+  fill("black")
+  text("Puntuación: "+ score, width-200,50);
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-200) {
+   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height/2-8) {
      JumpSound.play();
       
       trex.velocityY = -10;
@@ -141,7 +143,7 @@ function spawnClouds() {
   //escribe aquí el código para apareer las nubes
   if (frameCount % 60 === 0) {
     var cloud = createSprite(width+20,height,40,10);
-    cloud.y = Math.round(random(80,height-220));
+    cloud.y = Math.round(random(80,height/2));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
     cloud.velocityX = -3;
@@ -161,7 +163,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(width+20,height-195,10,40);
+    var obstacle = createSprite(width+20,height/2,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(6 + 3*score/100);
     
