@@ -37,6 +37,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   trex = createSprite(50,height-200,20,50);
+  trex.debug=false;
+  trex.setCollider("circle",-5,-9,40);
+
   
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
@@ -59,7 +62,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height-180,width,10);
+  invisibleGround = createSprite(width/2,height-170,width,10);
   invisibleGround.visible = false;
   
   cloudsGroup = new Group();
@@ -77,7 +80,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-60) {
+   if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-200) {
       
       trex.velocityY = -10;
        touches = [];
@@ -85,7 +88,7 @@ function draw() {
     
     
   
-    trex.velocityY = trex.velocityY + 0.8
+    trex.velocityY = trex.velocityY + 0.7
   
     if (ground.x < 0){
       ground.x = ground.width/2;
@@ -130,7 +133,7 @@ function spawnClouds() {
   //escribe aquí el código para apareer las nubes
   if (frameCount % 60 === 0) {
     var cloud = createSprite(width+20,height,40,10);
-    cloud.y = Math.round(random(80,height-100));
+    cloud.y = Math.round(random(80,height-220));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
     cloud.velocityX = -3;
@@ -150,7 +153,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
-    var obstacle = createSprite(width+20,height-30,10,40);
+    var obstacle = createSprite(width+20,height-195,10,40);
     //obstacle.debug = true;
     obstacle.velocityX = -(6 + 3*score/100);
     
@@ -190,7 +193,7 @@ function reset(){
   
   trex.changeAnimation("running",trex_running);
   
- //c
+ 
   
   score = 0;
   
