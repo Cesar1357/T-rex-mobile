@@ -190,7 +190,7 @@ function reset(){
   
   trex.changeAnimation("running",trex_running);
   
- 
+ //c
   
   score = 0;
   
