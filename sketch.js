@@ -221,7 +221,7 @@ if (frameCount % 40 === 0) {
     //obstacle.debug = true;
      obstacle.velocityX = -(10.5 + 3*score/100);
     
-    //genera obst'aculos al azar
+    
     var rand = Math.round(random(1,6));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
