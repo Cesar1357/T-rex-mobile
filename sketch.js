@@ -75,6 +75,8 @@ function setup() {
   cloudsGroup = new Group();
   obstaclesGroup = new Group();
   badsGroup = new Group();
+ 
+  
   
   score = 0;
 }
@@ -186,8 +188,9 @@ function draw() {
     }
   }
   
-    bads.depth = trex.deph;
-    trex.depth = trex.depth + 1;
+   bads.depth = trex.deph;
+   trex.depth = trex.depth + 1;
+  
   drawSprites();
 }
 
@@ -195,7 +198,7 @@ function spawnClouds() {
   //escribe aquí el código para apareer las nubes
   if (frameCount % 60 === 0) {
     var cloud = createSprite(width+20,height,40,10);
-    cloud.y = Math.round(random(80,height/2));
+    cloud.y = Math.round(random(80,height/2-50));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
     cloud.velocityX = -3;
@@ -222,7 +225,7 @@ if (frameCount % 40 === 0) {
     //obstacle.debug = true;
      obstacle.velocityX = -(10.5 + 3*score/100);
     
-    
+    //genera obst'aculos al azar
     var rand = Math.round(random(1,6));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
@@ -251,8 +254,9 @@ if (frameCount % 40 === 0) {
 function bads(){
   if (frameCount % 250 === 0) {
     var bads = createSprite(width+20,height/2-45,40,10);
+    bads.debug = false; 
     bads.setCollider("rectangle",0,0,240,100);
-
+ 
 
     bads.addImage(badsImg);
     bads.scale = 0.2;
@@ -262,11 +266,14 @@ function bads(){
     bads.lifetime = width+25;
     
 
-    restart.depth = bads.depth;
-    restart.depth = restart.depth + 1;
+   
     badsGroup.add(bads);
     
-
+    restart.depth = bads.depth;
+    restart.depth = restart.depth + 1;
+    
+   
+    
     
   }
 }
