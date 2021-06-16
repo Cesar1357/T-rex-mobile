@@ -186,7 +186,8 @@ function draw() {
     }
   }
   
-  
+    bads.depth = trex.deph;
+    trex.depth = trex.depth + 1;
   drawSprites();
 }
 
@@ -265,8 +266,7 @@ function bads(){
     restart.depth = restart.depth + 1;
     badsGroup.add(bads);
     
-    trex.depth = bads.deph;
-    trex.depth = trex.depth + 1;
+
     
   }
 }
