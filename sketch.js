@@ -101,6 +101,11 @@ function draw() {
       gameState = PLAY;
       
     }
+    
+     if (touches.length > 0){
+      gameState = PLAY;
+      
+    }
   }
   
   if (gameState===PLAY){
