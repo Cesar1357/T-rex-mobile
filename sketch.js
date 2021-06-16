@@ -1,6 +1,7 @@
 var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
+var inicio = 5;
 
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
@@ -43,6 +44,8 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  
+  gameState = inicio;
   
   trex = createSprite(50,height/2,20,50);
   trex.debug=false;
@@ -92,6 +95,13 @@ function draw() {
   fill("black")
   text("Puntuación: "+ score, width-200,50);
   text("HI: "+ hight,width-350,50)
+  
+  if (gameState===inicio){
+    if (keyDown("SPACE")){
+      gameState = PLAY;
+      
+    }
+  }
   
   if (gameState===PLAY){
     score = score + Math.round(getFrameRate()/60);
