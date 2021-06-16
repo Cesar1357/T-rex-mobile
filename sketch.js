@@ -52,6 +52,8 @@ function setup() {
   trex.addAnimation("collided", trex_collided);
   trex.scale = 0.5;
   
+  
+  
   ground = createSprite(width/2,height/2+10,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
@@ -75,6 +77,8 @@ function setup() {
   cloudsGroup = new Group();
   obstaclesGroup = new Group();
   badsGroup = new Group();
+  
+  
  
   
   
@@ -188,8 +192,10 @@ function draw() {
     }
   }
   
-   bads.depth = trex.deph;
-   trex.depth = trex.depth + 1;
+ //  bads.depth = trex.deph;
+ //  trex.depth = trex.depth + 1;
+  
+  
   
   drawSprites();
 }
@@ -219,7 +225,7 @@ function spawnClouds() {
 function spawnObstacles(){ 
 if (frameCount % 40 === 0) {
  
-    var obstacle = createSprite(width,height/2-2,10,40);
+    var obstacle = createSprite(width,height/2-1,10,40);
     obstacle.x = Math.round(random(width+2,width+500));
 
     //obstacle.debug = true;
@@ -248,6 +254,11 @@ if (frameCount % 40 === 0) {
     obstacle.lifetime = width+5;
     //agrega cada obstáculo al grupo
     obstaclesGroup.add(obstacle);
+  
+  
+  
+    
+  
   }
 }
 
