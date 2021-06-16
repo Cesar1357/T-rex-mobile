@@ -261,8 +261,8 @@ function bads(){
     bads.lifetime = width+25;
     
 
-    bads.depth = trex.depth;
-    trex.depth = trex.depth + 1;
+    restart.depth = bads.depth;
+    restart.depth = restart.depth + 1;
     badsGroup.add(bads);
     
   }
