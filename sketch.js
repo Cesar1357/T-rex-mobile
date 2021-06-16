@@ -250,6 +250,8 @@ if (frameCount % 40 === 0) {
 function bads(){
   if (frameCount % 250 === 0) {
     var bads = createSprite(width+20,height/2-45,40,10);
+    bads.setCollider("rectangle",0,0,240,100);
+
 
     bads.addImage(badsImg);
     bads.scale = 0.2;
