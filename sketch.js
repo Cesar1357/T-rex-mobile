@@ -54,7 +54,7 @@ function setup() {
   ground = createSprite(width/2,height/2+10,width,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
-  //ground.velocityX = +(50);
+
   
   gameOver = createSprite(width/2,height/2-100);
   gameOver.addImage(gameOverImg);
@@ -103,7 +103,7 @@ function draw() {
   
     trex.velocityY = trex.velocityY + 1.5;
   
-    if (ground.x < 200){
+    if (ground.x < 0){
       ground.x = ground.width/2;
     }
   
@@ -179,7 +179,7 @@ function spawnObstacles() {
     obstacle.x = Math.round(random(width+2,width+500));
 
     //obstacle.debug = true;
-     obstacle.velocityX = -(11 + 3*score/100);
+     obstacle.velocityX = -(10.5 + 3*score/100);
     
     //genera obst'aculos al azar
     var rand = Math.round(random(1,6));
