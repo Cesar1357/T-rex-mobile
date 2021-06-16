@@ -103,7 +103,7 @@ function draw() {
   
     trex.velocityY = trex.velocityY + 1.5;
   
-    if (ground.x < 0){
+    if (ground.x < 200){
       ground.x = ground.width/2;
     }
   
@@ -179,7 +179,7 @@ function spawnObstacles() {
     obstacle.x = Math.round(random(width+2,width+500));
 
     //obstacle.debug = true;
-     obstacle.velocityX = -(10.5 + 3*score/100);
+     obstacle.velocityX = -(11 + 3*score/100);
     
     //genera obst'aculos al azar
     var rand = Math.round(random(1,6));
