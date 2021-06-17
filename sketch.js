@@ -104,7 +104,7 @@ function draw() {
     
     textSize(20);
      fill("black")
-  text("Presiona la tecla espacio para empezar",width/2-150,height/2)
+  text("Presiona la tecla espacio o toca la pantalla para empezar",width/2-250,height/2-50)
     
     if (touches.length > 0){
       gameState = PLAY;
