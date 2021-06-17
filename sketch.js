@@ -248,7 +248,7 @@ if (frameCount % 40 === 0) {
     obstacle.x = Math.round(random(width+2,width+500));
 
     //obstacle.debug = true;
-     obstacle.velocityX = -(10.5 + 3*score/100);
+     obstacle.velocityX = -(11 + 3*score/100);
   
     // trex.depth = obstaclesGroup.depth;
      //trex.depth = trex.depth - 1;
