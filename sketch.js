@@ -102,7 +102,7 @@ function draw() {
       
     }
     
-     if (touches.length > 0){
+    if (touches.length > 0){
       gameState = PLAY;
       
     }
@@ -297,6 +297,9 @@ function bads(){
     
     restart.depth = bads.depth;
     restart.depth = restart.depth + 1;
+    
+    trex.depth = bads.depth;
+    trex.depth = trex.depth + 1;
     
    
     
