@@ -116,13 +116,13 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(10 + 3*score/100);
   
-   if((touches.length > 0 && trex.y  >= height/2-100)) {
+   if((touches.length > 0 && trex.y  >= height/2-10)) {
      trex.velocityY = -20;
       JumpSound.play();
        touches = [];
     }
     
-    if (keyDown("SPACE") && trex.y  >= height/2-100) {
+    if (keyDown("SPACE") && trex.y  >= height/2-10) {
       
      trex.velocityY = -20;
       JumpSound.play();
@@ -242,7 +242,7 @@ function spawnClouds() {
 }
 
 function spawnObstacles(){ 
-if (frameCount % 40 === 0) {
+if (frameCount % 50 === 0) {
  
     var obstacle = createSprite(width,height/2-1,10,40);
     obstacle.x = Math.round(random(width+2,width+500));
@@ -287,6 +287,7 @@ if (frameCount % 40 === 0) {
 function bads(){
   if (frameCount % 250 === 0) {
     var bads = createSprite(width+20,height/2-45,40,10);
+    bads.x = Math.round(random(width+5,width+1000));
     bads.debug = false; 
     bads.setCollider("rectangle",0,0,240,100);
  
