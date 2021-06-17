@@ -102,7 +102,7 @@ function draw() {
       
     }
     
-    textSize(20);
+    textSize(width-1000);
      fill("black")
   text("Presiona la tecla espacio o toca la pantalla para empezar",width/2-250,height/2-50)
     
