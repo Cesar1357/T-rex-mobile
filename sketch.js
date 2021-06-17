@@ -102,6 +102,10 @@ function draw() {
       
     }
     
+    textSize(20);
+     fill("black")
+  text("Presiona la tecla espacio para empezar",width/2-150,height/2)
+    
     if (touches.length > 0){
       gameState = PLAY;
       
@@ -245,6 +249,9 @@ if (frameCount % 40 === 0) {
 
     //obstacle.debug = true;
      obstacle.velocityX = -(10.5 + 3*score/100);
+  
+    // trex.depth = obstaclesGroup.depth;
+     //trex.depth = trex.depth - 1;
     
     //genera obst'aculos al azar
     var rand = Math.round(random(1,6));
@@ -298,8 +305,8 @@ function bads(){
     restart.depth = bads.depth;
     restart.depth = restart.depth + 1;
     
-    trex.depth = bads.depth;
-    trex.depth = trex.depth + 1;
+    bads.depth = trex.depth;
+    bads.depth = bads.depth - 1;
     
    
     
